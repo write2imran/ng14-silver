@@ -1,0 +1,17 @@
+{
+  "name": "xentity-restapi-demo",
+  "version": "1.0.0",
+  "description": "Mock implementation of xEntity REST API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test exist at the moment\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Imran Rauf",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1"
+  }
+}
