@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 
 import { StoreModule } from '@ngrx/store';
 import * as fromLogState from './store';
+import * as fromReducers from './store/log.reducers';
 import { FormsModule } from '@angular/forms';
 
 
@@ -20,7 +21,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     StoreModule.forFeature(
       fromLogState.logModuleStateFeatureKey,
-      fromLogState.reducers,
+      fromReducers.reducers,
       { metaReducers: fromLogState.metaReducers })
   ],
   providers: [LogService],

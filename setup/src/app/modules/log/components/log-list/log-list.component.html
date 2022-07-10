@@ -1,1 +1,8 @@
-<p>logs-list!</p>
+<div *ngFor="let log of logs$ | async">
+
+    <div style="margin: 20px">
+        <span>{{log.id}} - </span>
+        <span>{{log.createdAt | date:'shortDate'}} - </span>
+        <span>{{log.createdBy}}</span>
+    </div>
+</div>

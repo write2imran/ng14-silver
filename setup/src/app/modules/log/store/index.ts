@@ -23,22 +23,4 @@ export const initialState: LogState = {
   error: undefined
 }
 
-export const reducers = createReducer(
-  initialState,
-
-  on(loadLogsSuccess, (state, action) => {
-    return { logs: action.logs, error: undefined };
-  }),
-
-  on(loadLogsFailure, (state, action) => {
-    return { logs: state.logs, error: action.error };
-  })
-
-
-
-);
-
-
-
-
 export const metaReducers: MetaReducer<LogState>[] = !environment.production ? [] : [];
