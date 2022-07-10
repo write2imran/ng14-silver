@@ -33,15 +33,16 @@ export class LogListComponent implements OnInit {
   }
 
   loadXEntities() {
-    const logOberver = {
-      next: (logs: Log[]) => {
-        this.store.dispatch(fromActions.loadLogsSuccess({ logs: logs }));
-      },
-      error: (err: any) => {
-        this.store.dispatch(fromActions.loadLogsFailure({ error: err }));
-      }
-    };
-    this.logService.getLogs().subscribe(logOberver);
+    //Move following logic into Effect
+    // const logOberver = {
+    //   next: (logs: Log[]) => {
+    //     this.store.dispatch(fromActions.loadLogsSuccess({ logs: logs }));
+    //   },
+    //   error: (err: any) => {
+    //     this.store.dispatch(fromActions.loadLogsFailure({ error: err }));
+    //   }
+    // };
+    // this.logService.getLogs().subscribe(logOberver);
 
     //Get subscribe to latest logs data available at anytime.
     this.logs$ = this.store.pipe(select(selectLogs));

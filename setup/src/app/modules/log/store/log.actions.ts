@@ -3,15 +3,15 @@ import { Log } from '../models/Log';
 import { createAction, props } from '@ngrx/store';
 
 export const loadLogs = createAction(
-  '[XEntity] Load XEntity'
+  '[Log] Load Log'
 );
 
 export const loadLogsSuccess = createAction(
-  '[XEntity] Load XEntitys Success',
+  '[Log Effect] Load Log Success',
   props<{ logs: Log[] }>()
 );
 
 export const loadLogsFailure = createAction(
-  '[XEntity] Load XEntitys Failure',
+  '[Log Effect] Load Log Failure',
   props<{ error: any }>()
 );
