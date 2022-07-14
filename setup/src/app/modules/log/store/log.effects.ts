@@ -13,11 +13,9 @@ export class LogEffects {
     ofType(fromLogAction.loadLogs),
     mergeMap(() =>
       this.logService.getLogs().pipe(
-        tap(logs => console.log('HTTP response:', logs)),
-        map(logs => (fromLogAction.loadLogsSuccess({ logs })),
-          catchError(() =>
-            of({ type: '[Log Effect] Load Log Failure' }))
-        ))
+        map(logs => (fromLogAction.loadLogsSuccess({ logs }))),
+        catchError((error) => of({ type: '[Log Effect] Load Log Failure', error: error }))
+      )
     )
   ));
 
